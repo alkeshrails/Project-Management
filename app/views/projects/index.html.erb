@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<%= javascript_pack_tag 'pagination' %>
+<% if current_user %>
+  <h1>Projects</h1>
+
+  <div id="select_table">
+    <%= render partial: 'projects', locals: { projects: @projects } %>
+  </div>
+
+  <%= link_to 'New Project', new_project_path %>
+
+  <script>
+      $("#orderselect").change(function(e) {
+        e.preventDefault();
+        let Data = $('#orderselect :selected').text();
+          $.ajax({
+              method: "GET",
+              url: "/projects",
+              data: {key: Data},
+              dataType: "script"
+          });
+      }); 
+  </script>
+<%else%>
+ <h1> Please Login the page <h1>
+<%end%>

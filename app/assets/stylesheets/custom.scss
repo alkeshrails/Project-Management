@@ -1,0 +1,20 @@
+table, th, td {
+    border: thin solid grey;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin-top: 1em;
+  }
+  
+  th, td {
+    padding: 0.5em;
+  }
+  
+  #nameselect, .sort-direction-radio {
+    display: inline-flex;
+  }
+  
+  #nameselect > select {
+    min-width: 10em;
+  }
